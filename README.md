@@ -49,6 +49,7 @@ This Django App helps you to send Email Campaigns to your Subscribers.
    1. ` send/ ` To start sending Emails to the clients using pub-sub Architecture.
    2. `add_user/ ` To add new user with unique Email ID.
    3. `edit_user_status/` To edit the subscriber status as inactive or active.
+      
 2 .This is how Admin Panel looks like (Don't worry about the data, we will enter this in the next steps)
 
    ![Screenshot of main page admin panel](https://github.com/YashTote/Email-Campaign/blob/main/static/image/Screenshot%20from%202023-09-08%2019-20-05.png)
