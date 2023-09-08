@@ -1,4 +1,4 @@
-![image](https://github.com/YashTote/Email-Campaign/assets/83072166/3b487d98-5798-4067-9483-9e1afab25baa)# Email-Campaign
+# Email-Campaign
 
   
 **Setting up the Project**
@@ -24,13 +24,18 @@
  ```
  pip install -r requirements.txt
  ```
+**To configure the server side Email Host:**
+ 1. we need to do the following changes to the code. We need a gmail account and  `app password` credentials. Please see the below video to see how to get one (**The person in this video chooses the Windows Computer as Password, But we need `Others (Custom name)` Password**) . [Link to the youtube video](https://www.youtube.com/watch?v=rpmfDHCyPbo).
+ 2. Now `cd emailCampaign/emailCampaign/` and open settings.py. Scroll to the bottom and set the `EMAIL_HOST_USER` and `EMAIL_HOST_PASSWORD` to your custom credentials.
+ 3. A last step `cd emailCampaign/endpoint/` and open `views.py`. Edit the `from_email` (line:14) to your HOST EMAIL (Same as above). Your backend is now ready to perform.
 
- After the dependencies are sucessfully installed `cd emailCampaign` and run `python3 manage.py createsuperuser`, enter the necessary details in order to access the SQLite database admin panel. Now run `python3 manage.py runserver`. 
+
+ After the dependencies are installed and Email Host is configured `cd emailCampaign` and run `python3 manage.py createsuperuser`, enter the necessary details in order to access the SQLite database admin panel. Now run `python3 manage.py runserver`. 
  
 > **Note**
  > If you face the _sqlite3() error head to [this](https://www.codethebest.com/python-package-errors/modulenotfounderror-no-module-named-sqlite3-solved/)
 
-How to send the emails ?
+**How to send the emails ?**
 
 1. These are the various API endpoints to perform CRUD operations on the database. You can also perform these operations from Django admin panel `localhost:8000/admin`.
   
@@ -59,6 +64,8 @@ How to send the emails ?
 
 7. Making the API `GET` call for sending Email. Perform the call on `http://localhost:8000/endpoint/send/`, with a Parameter Key : `category` and value : `category_name`. 
     ![Screenshot of API get call](https://github.com/YashTote/Email-Campaign/blob/main/static/image/Screenshot%20from%202023-09-08%2020-27-30.png)
+
+
     
    
 
