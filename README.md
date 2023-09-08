@@ -30,7 +30,7 @@
  3. A last step `cd emailCampaign/endpoint/` and open `views.py`. Edit the `from_email` (line:14) to your HOST EMAIL (Same as above). Your backend is now ready to perform.
 
 
- After the dependencies are installed and Email Host is configured `cd emailCampaign` and run `python3 manage.py createsuperuser`, enter the necessary details in order to access the SQLite database admin panel. Now run `python3 manage.py runserver`. 
+ After the dependencies are installed and Email Host is configured, got the basefolder (where manage.py file is located) `cd emailCampaign` and run `python3 manage.py createsuperuser`, enter the necessary details in order to access the SQLite database admin panel. Now run `python3 manage.py runserver`. 
  
 > **Note**
  > If you face the _sqlite3() error head to [this](https://www.codethebest.com/python-package-errors/modulenotfounderror-no-module-named-sqlite3-solved/)
