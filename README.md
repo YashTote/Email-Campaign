@@ -28,7 +28,7 @@ This Django App helps you to send Email Campaigns to your Subscribers.
  pip install -r requirements.txt
  ```
 **To configure the server side Email Host:**
- 1. we need to do the following changes to the code. We need a gmail account and  `app password` credentials. Please see the below video to see how to get one (**The person in this video chooses the Windows Computer as Password, But we need `Others (Custom name)` Password**) . [Link to the youtube video](https://www.youtube.com/watch?v=rpmfDHCyPbo).
+ 1. We need to do the following changes in the code. We need a gmail account and  `app password` credentials. Please see the below video to see how to get one (**The person in this video chooses the Windows Computer as Password, But we need `Others (Custom name)` Password**) . [Link to the youtube video](https://www.youtube.com/watch?v=rpmfDHCyPbo).
  2. Now `cd emailCampaign/emailCampaign/` and open settings.py. Scroll to the bottom and set the `EMAIL_HOST_USER` and `EMAIL_HOST_PASSWORD` to your custom credentials.
     
     ![edit host credentials](https://github.com/YashTote/Email-Campaign/blob/main/static/image/Screenshot%20from%202023-09-08%2022-05-20.png)
