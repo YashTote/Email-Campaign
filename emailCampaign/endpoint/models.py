@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 # Create your models here.
 
 
@@ -31,3 +31,15 @@ class CategoryRelationship(models.Model):
 
     def __str__(self):
         return f"{self.subscriber.first_name} - {self.category.name} - {self.campaign.title}"
+    
+class DeliveryRecord(models.Model):
+    email = models.EmailField()
+    time_sent = models.DateTimeField()
+    
+    def save(self, *args, **kwargs):
+        # Set the time_sent field to the current date and time if the record is being created
+        if not self.pk:
+            self.time_sent = timezone.now()
+        super(DeliveryRecord, self).save(*args, **kwargs)
+    def __str__(self):
+        return self.email
