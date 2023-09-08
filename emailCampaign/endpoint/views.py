@@ -61,7 +61,7 @@ def send_email(request):
 def add_user(request):
     if request.method == 'POST':
         email = request.POST.get('email')
-        user_name = request.POST.get('user_name')
+        user_name = request.POST.get('subscriber')
       
         if Subscriber.objects.filter(email=email).exists():
             return JsonResponse({'message': 'User with this email already exists'}, status=400)
