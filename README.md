@@ -1,5 +1,8 @@
 # Email-Campaign
 
+This is a project submission for Mike Legal Backend Dev position. 
+
+This Django App helps you to send Email Campaigns to your Subscribers. 
   
 **Setting up the Project**
 
@@ -83,8 +86,10 @@
 12. If everything goes well all the subscriber will receive this email.
 
     ![Final Email screenshot](https://github.com/YashTote/Email-Campaign/blob/main/static/image/Screenshot%20from%202023-09-08%2019-32-09.png)
+
+13. You can see the records of all the sent emails in the `Delivery Record` Table.
   
-14. You can edit the subcriber status to in active by calling `edit_user_status` and setting new_status as `Flase`.
+14. You can edit the subcriber status to in_active by calling `edit_user_status` and setting new_status as `Flase`.
     
     ![Screenshot of API edit_user call](https://github.com/YashTote/Email-Campaign/blob/main/static/image/Screenshot%20from%202023-09-08%2021-59-06.png)
 
