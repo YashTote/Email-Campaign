@@ -1,7 +1,7 @@
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
-from .models import CategoryRelationship
+from .models import *
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 import concurrent.futures
@@ -45,3 +45,38 @@ def send_email(request):
         return JsonResponse({'people': data, 'execution_time': t2 - t1})
     else:
         return JsonResponse({'error': 'category parameter is missing'})
+
+
+@csrf_exempt
+def add_user(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        user_name = request.POST.get('user_name')
+      
+        if Subscriber.objects.filter(email=email).exists():
+            return JsonResponse({'message': 'User with this email already exists'}, status=400)
+
+        subscriber = Subscriber(email = email, first_name = user_name)
+        subscriber.save()
+
+        return JsonResponse({'message': 'User added successfully'})
+    else:
+        return JsonResponse({'message': 'Invalid request method'}, status=405)
+    
+@csrf_exempt
+def edit_user_status(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        active_status = request.POST.get('new_status')
+        
+        try:
+            user = Subscriber.objects.get(email=email)
+        except Subscriber.DoesNotExist:
+            return JsonResponse({'message': 'User not found'}, status=404)
+        
+        user.is_active = active_status
+        user.save()
+
+        return JsonResponse({'message' : 'Email updated successfully'})
+    else :
+        return JsonResponse({'message': 'Invalid request method'}, status=405)
