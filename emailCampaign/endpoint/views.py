@@ -52,7 +52,7 @@ def send_email(request):
         # Serialize the queryset data to JSON
         data = [{'name': person.subscriber.email, 'campaign_title': person.campaign.title} for person in records]
         
-        return JsonResponse({'people': data, 'execution_time': t2 - t1})
+        return JsonResponse({'Subscribers': data, 'execution_time': t2 - t1})
     else:
         return JsonResponse({'error': 'category parameter is missing'})
 
