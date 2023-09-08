@@ -88,7 +88,3 @@
     
     ![Screenshot of API edit_user call](https://github.com/YashTote/Email-Campaign/blob/main/static/image/Screenshot%20from%202023-09-08%2021-59-06.png)
 
-
-    
-   
-
