@@ -11,12 +11,14 @@ class Campaign(models.Model):
     html_content = models.TextField()
     plain_text_content = models.TextField()
     published_date = models.DateTimeField()
-    
+    def __str__(self):
+        return self.title
 class Subscriber(models.Model):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True)
-
+    def __str__(self):
+        return self.first_name
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)
     def __str__(self):
