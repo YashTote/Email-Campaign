@@ -1,7 +1,5 @@
 # Email-Campaign
 
-This is a project submission for Mike Legal Backend Dev position. 
-
 This Django App helps you to send Email Campaigns to your Subscribers. 
   
 **Setting up the Project**
